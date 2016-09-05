@@ -5,7 +5,7 @@ const parse = require('./lib/xml')
 module.exports = (options) => {
   return function * (next) {
     const ctx = this
-    if (ctx.is('xml')) {
+    if (ctx.is('text/xml','xml')) {
       switch (ctx.method) {
         case 'POST':
         case 'PUT':
